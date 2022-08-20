@@ -55,8 +55,6 @@ const Home: NextPage = () => {
             `}
           >
             {items.map((item, idx) => {
-              console.log(item);
-
               return (
                 <Box
                   key={idx}
