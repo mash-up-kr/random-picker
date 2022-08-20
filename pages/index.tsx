@@ -55,6 +55,8 @@ const Home: NextPage = () => {
             `}
           >
             {items.map((item, idx) => {
+              console.log(item);
+
               return (
                 <Box
                   key={idx}
@@ -82,7 +84,10 @@ const Home: NextPage = () => {
                 >
                   <Image
                     src={item.src}
+                    alt=""
                     layout="fill"
+                    placeholder="blur"
+                    blurDataURL={item.blurDataURL}
                     onClick={() => {
                       setItems((items) =>
                         items.filter((item, idx) => {
