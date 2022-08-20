@@ -31,6 +31,13 @@ const Home: NextPage = () => {
             {items.map((item, idx) => {
               return (
                 <Box
+                  onClick={() => {
+                    setItems((items) =>
+                      items.filter(
+                        (item, idx) => idx !== items.length - (currentIdx % items.length),
+                      ),
+                    );
+                  }}
                   key={idx}
                   css={css`
                     position: absolute;
@@ -82,7 +89,6 @@ const Home: NextPage = () => {
           </Button>
         </ButtonGroup>
       </VStack>
-      <div>{}</div>
     </Flex>
   );
 };
