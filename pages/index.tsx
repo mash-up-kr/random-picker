@@ -28,6 +28,8 @@ const Home: NextPage = () => {
   const [currentIdx, setCurrentIdx] = useState(0);
   const [intervalId, setIntervalId] = useState<ReturnType<typeof setInterval>>();
 
+  const [isRotate, setIsRotate] = useState<boolean>(false);
+
   return (
     <Flex
       justifyContent="center"
@@ -66,8 +68,9 @@ const Home: NextPage = () => {
                     text-align: center;
                     color: #000;
                     /* opacity: 0.95; */
-                    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-                      rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+                    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+                      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
                     border-radius: 10px;
                     transition: transform 2s;
                     perspective: 500px;
@@ -93,8 +96,10 @@ const Home: NextPage = () => {
             })}
           </Box>
         </Container>
-        <ButtonGroup>
+        <ButtonGroup gap="8px">
           <Button
+            css={{ background: '#fff', color: '#6244FF', fontWeight: 800, padding: '19px' }}
+            size="lg"
             onClick={() => {
               if (!intervalId) {
                 setIntervalId(
@@ -103,16 +108,22 @@ const Home: NextPage = () => {
                   }, 100),
                 );
               }
+              setIsRotate(!isRotate);
             }}
+            disabled={isRotate}
           >
             시작
           </Button>
           <Button
+            css={{ background: '#fff', color: '#6244FF', fontWeight: 800, padding: '19px' }}
+            size="lg"
             onClick={() => {
               if (intervalId) {
                 setIntervalId(clearInterval(intervalId) as undefined);
               }
+              setIsRotate(!isRotate);
             }}
+            disabled={!isRotate}
           >
             정지
           </Button>
