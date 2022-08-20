@@ -86,7 +86,7 @@ const Home: NextPage = () => {
                     onClick={() => {
                       setItems((items) =>
                         items.filter((item, idx) => {
-                          if (items.length - (currentIdx % items.length) === 0) {
+                          if (items.length - (currentIdx % items.length) === items.length) {
                             return idx !== items.length - 1;
                           }
                           return idx !== items.length - (currentIdx % items.length);
