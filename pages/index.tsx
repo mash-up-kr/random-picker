@@ -82,9 +82,12 @@ const Home: NextPage = () => {
                     layout="fill"
                     onClick={() => {
                       setItems((items) =>
-                        items.filter(
-                          (item, idx) => idx !== items.length - (currentIdx % items.length),
-                        ),
+                        items.filter((item, idx) => {
+                          if (items.length - (currentIdx % items.length) === 0) {
+                            return idx !== items.length - 1;
+                          }
+                          return idx !== items.length - (currentIdx % items.length);
+                        }),
                       );
                     }}
                   />
