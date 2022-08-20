@@ -2,6 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
+  compiler: {
+    emotion: {
+      autoLabel: 'dev-only',
+      labelFormat: '[filename]--[local]',
+    },
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
