@@ -1,4 +1,10 @@
+import styled from '@emotion/styled';
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
+
+const Body = styled.body`
+  background: #000;
+  color: #fff;
+`;
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -28,11 +34,11 @@ class MyDocument extends Document {
           />
           <link rel="stylesheet" href="https://static.mash-up.kr/fonts/gilroy.css" />
         </Head>
-        <body>
+        <Body>
           <Main />
           <div id="modal-root" />
           <NextScript />
-        </body>
+        </Body>
       </Html>
     );
   }
