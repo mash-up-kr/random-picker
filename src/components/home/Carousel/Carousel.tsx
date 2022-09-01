@@ -1,15 +1,15 @@
 import { Dispatch, useState } from 'react';
-import { CarouselItemType } from '../CarouselItem';
+import { CarouselItemType } from '../CarouselItem/CarouselItem';
 import { CarouselItem } from '@/components';
 import * as Styled from './Carousel.styled';
-import { mashUp12thProjectTeams } from '@/static';
 
 interface CarouselProps {
+  carouselList: CarouselItemType[];
   setRemovedList: Dispatch<React.SetStateAction<CarouselItemType[]>>;
 }
 
-function Carousel({ setRemovedList }: CarouselProps) {
-  const [carousel, setCarousel] = useState<CarouselItemType[]>(mashUp12thProjectTeams);
+function Carousel({ carouselList, setRemovedList }: CarouselProps) {
+  const [carousel, setCarousel] = useState<CarouselItemType[]>(carouselList);
 
   const [isRemoving, setIsRemoving] = useState(false);
   const [randomIndex, setRandomIndex] = useState(Math.floor(Math.random() * carousel.length));

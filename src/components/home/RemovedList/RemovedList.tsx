@@ -1,12 +1,7 @@
-import styled from '@emotion/styled';
+import * as Styled from './RemovedList.styled';
 import { RemovedItem } from '@/components';
 import { CarouselItemType } from '../CarouselItem/CarouselItem';
-
-const RemovedItemList = styled.ol`
-  display: flex;
-  flex-flow: column nowrap;
-  width: 279px;
-`;
+import { Box } from '@chakra-ui/react';
 
 interface RemovedListProps {
   removedList: CarouselItemType[];
@@ -14,11 +9,13 @@ interface RemovedListProps {
 
 function RemovedList({ removedList }: RemovedListProps) {
   return (
-    <RemovedItemList>
-      {removedList.map(({ teamName, removedImage }) => {
-        return <RemovedItem removedImage={removedImage} key={`removed-item-${teamName}`} />;
-      })}
-    </RemovedItemList>
+    <Box position="absolute" top={0} left={0}>
+      <Styled.RemovedItemList>
+        {removedList.map(({ teamName, removedImage }) => {
+          return <RemovedItem removedImage={removedImage} key={`removed-item-${teamName}`} />;
+        })}
+      </Styled.RemovedItemList>
+    </Box>
   );
 }
 

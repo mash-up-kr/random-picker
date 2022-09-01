@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Carousel, RemovedList } from '@/components';
-import { CarouselItemType } from './CarouselItem/CarouselItem';
+import * as Styled from './RandomPicker.styled';
+import { Carousel, RemovedList, RemovedPlaceholderList } from '@/components';
+import { CarouselItemType } from '../CarouselItem/CarouselItem';
+import { mashUp12thProjectTeams } from '@/static';
 
 type Props = {};
 
@@ -9,8 +11,11 @@ function RandomPincker({}: Props) {
 
   return (
     <>
-      <Carousel setRemovedList={setRemovedList} />
-      <RemovedList removedList={removedList} />
+      <Carousel carouselList={mashUp12thProjectTeams} setRemovedList={setRemovedList} />
+      <Styled.RemovedContainer>
+        <RemovedPlaceholderList carouselList={mashUp12thProjectTeams} />
+        <RemovedList removedList={removedList} />
+      </Styled.RemovedContainer>
     </>
   );
 }
