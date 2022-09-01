@@ -6,7 +6,7 @@ import { mashUp12thProjectTeams } from '@/static';
 
 type Props = {};
 
-function RandomPincker({}: Props) {
+function RandomPicker({}: Props) {
   const [removedList, setRemovedList] = useState<CarouselItemType[]>([]);
 
   return (
@@ -20,4 +20,4 @@ function RandomPincker({}: Props) {
   );
 }
 
-export default RandomPincker;
+export default RandomPicker;
