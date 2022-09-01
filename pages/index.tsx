@@ -4,7 +4,7 @@ import { RandomPicker } from '@/components';
 function Home() {
   return (
     <>
-      <Container display="flex" maxW="7xl">
+      <Container display="flex" maxW="100%">
         <RandomPicker />
       </Container>
     </>

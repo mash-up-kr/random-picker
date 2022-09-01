@@ -1,10 +1,15 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import {
+  removedItemWidth,
+  removedItemHeight,
+  removedItemMarginBottom,
+} from '@/components/home/RemovedItem/RemovedItem.styled';
 
 export const RemovedPlaceholderWrapper = styled.li`
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: ${removedItemMarginBottom}px;
 `;
 
 export const RemovedPlaceholderNumber = styled.span`
@@ -21,7 +26,8 @@ export const NumberUnderline = styled.div`
 export const RemovedPlaceholder = styled.div`
   display: flex;
   align-items: center;
-  width: 300px;
+  width: ${removedItemWidth}px;
+  height: ${removedItemHeight}px;
   margin-left: 32px;
   padding: 15px;
   background: #151517;

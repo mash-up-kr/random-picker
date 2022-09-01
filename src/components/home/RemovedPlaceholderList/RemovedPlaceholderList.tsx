@@ -1,4 +1,4 @@
-import * as Styled from './RemovedPlaceholder.styled';
+import * as Styled from './RemovedPlaceholderList.styled';
 import { RemovedPlaceholder } from '@/components';
 import { CarouselItemType } from '../CarouselItem/CarouselItem';
 

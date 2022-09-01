@@ -1,7 +1,9 @@
 import { Dispatch, useState } from 'react';
 import { CarouselItemType } from '../CarouselItem/CarouselItem';
 import { CarouselItem } from '@/components';
+import { carouselItemWidth } from '@/components/home/CarouselItem/CarouselItem.styled';
 import * as Styled from './Carousel.styled';
+import { Box } from '@chakra-ui/react';
 
 interface CarouselProps {
   carouselList: CarouselItemType[];
@@ -48,7 +50,9 @@ function Carousel({ carouselList, setRemovedList }: CarouselProps) {
         <div className="carousel">
           {carousel.map((carouselItem, index) => {
             const rotateY = (360 / carousel.length) * index;
-            const translateZ = Math.round((180 * 1.35) / 2 / Math.tan(Math.PI / carousel.length));
+            const translateZ = Math.round(
+              (carouselItemWidth * 1.2) / 2 / Math.tan(Math.PI / carousel.length),
+            );
             return (
               <CarouselItem
                 carouselItem={carouselItem}

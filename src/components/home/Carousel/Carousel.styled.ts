@@ -1,5 +1,9 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import {
+  carouselItemWidth,
+  carouselItemHeight,
+} from '@/components/home/CarouselItem/CarouselItem.styled';
 
 export const Scene = styled.div<{
   randomIndex: number;
@@ -38,10 +42,10 @@ export const Scene = styled.div<{
       }
     }
 
-    width: 200px;
-    height: 340px;
+    width: ${carouselItemWidth + 20}px;
+    height: ${carouselItemHeight + 20}px;
     position: relative;
-    perspective: 1000px;
+    perspective: 1200px;
     margin: 250px auto;
 
     & .carousel__wrapper {

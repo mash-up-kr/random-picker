@@ -1,6 +1,9 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
+export const carouselItemWidth = 216;
+export const carouselItemHeight = 294;
+
 export const CarouselCell = styled.div<{
   isRemoving: boolean;
   rotateY: number;
@@ -24,8 +27,8 @@ export const CarouselCell = styled.div<{
     justify-content: center;
     align-items: center;
     position: absolute;
-    width: 180px;
-    height: 320px;
+    width: ${carouselItemWidth}px;
+    height: ${carouselItemHeight}px;
     left: 10px;
     top: 10px;
     color: #fff;

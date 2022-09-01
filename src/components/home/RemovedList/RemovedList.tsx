@@ -9,7 +9,7 @@ interface RemovedListProps {
 
 function RemovedList({ removedList }: RemovedListProps) {
   return (
-    <Box position="absolute" top={0} left={0}>
+    <Box position="absolute" top={0} left={58}>
       <Styled.RemovedItemList>
         {removedList.map(({ teamName, removedImage }) => {
           return <RemovedItem removedImage={removedImage} key={`removed-item-${teamName}`} />;
