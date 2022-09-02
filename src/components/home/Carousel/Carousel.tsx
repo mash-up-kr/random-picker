@@ -37,14 +37,11 @@ function Carousel({ carouselList, setRemovedList }: CarouselProps) {
     setRemovedList((pre) => [...pre, removeItem]);
   };
 
-  const removeItemRotateY = (360 / carousel.length) * randomIndex * (carousel.length * 3 + 1);
+  const removeItemRotateY = (360 / carousel.length) * randomIndex + 18000;
 
   return (
     <Styled.Scene>
-      <Styled.CarouselWrapper
-        isRemoving={isRemoving}
-        removeItemRotateY={removeItemRotateY || 360 * 10}
-      >
+      <Styled.CarouselWrapper isRemoving={isRemoving} removeItemRotateY={removeItemRotateY}>
         <Styled.Carousel>
           {carousel.map((carouselItem, index) => {
             const rotateY = (360 / carousel.length) * index;
