@@ -28,7 +28,6 @@ export const mashUp12thProjectTeams = [
     removedImage: ggirriggirriRemoved,
   },
   { teamName: 'mashupbang', image: mashupbang, isRemoving: false, removedImage: mashupbangRemoved },
-  { teamName: 'branding', image: branding, isRemoving: false, removedImage: brandingRemoved },
   { teamName: 'jungsin', image: jungsin, isRemoving: false, removedImage: jungsinRemoved },
   { teamName: 'hMM', image: hMM, isRemoving: false, removedImage: hMMRemoved },
   { teamName: 'ladder', image: ladder, isRemoving: false, removedImage: ladderRemoved },
