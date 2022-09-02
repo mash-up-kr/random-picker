@@ -38,15 +38,14 @@ function Carousel({ carouselList, setRemovedList }: CarouselProps) {
   };
 
   const removeItemRotateY = (360 / carousel.length) * randomIndex * (carousel.length * 3 + 1);
+
   return (
-    <Styled.Scene
-      randomIndex={randomIndex}
-      carouselLength={carousel.length}
-      removeItemRotateY={removeItemRotateY || 360 * 10}
-      isRemoving={isRemoving}
-    >
-      <div className="carousel__wrapper">
-        <div className="carousel">
+    <Styled.Scene>
+      <Styled.CarouselWrapper
+        isRemoving={isRemoving}
+        removeItemRotateY={removeItemRotateY || 360 * 10}
+      >
+        <Styled.Carousel>
           {carousel.map((carouselItem, index) => {
             const rotateY = (360 / carousel.length) * index;
             const translateZ = Math.round(
@@ -61,8 +60,8 @@ function Carousel({ carouselList, setRemovedList }: CarouselProps) {
               />
             );
           })}
-        </div>
-      </div>
+        </Styled.Carousel>
+      </Styled.CarouselWrapper>
       <Styled.PickButton onClick={handleRandomRemoveCarousel} disabled={isRemoving}>
         뽑기
       </Styled.PickButton>

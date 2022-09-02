@@ -5,34 +5,25 @@ import {
   carouselItemHeight,
 } from '@/components/home/CarouselItem/CarouselItem.styled';
 
-export const Scene = styled.div<{
-  randomIndex: number;
-  carouselLength: number;
-  isRemoving: boolean;
-  removeItemRotateY: number;
-}>`
+export const Scene = styled.div`
+  @keyframes turn {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(-360deg);
+    }
+  }
+
+  width: ${carouselItemWidth + 20}px;
+  height: ${carouselItemHeight + 20}px;
+  position: relative;
+  perspective: 1200px;
+  margin: 250px auto;
+`;
+
+export const CarouselWrapper = styled.div<{ isRemoving: boolean; removeItemRotateY: number }>`
   ${({ isRemoving, removeItemRotateY }) => css`
-    @keyframes carouselRender {
-      0% {
-        transform: translateZ(-1000px);
-      }
-      50% {
-        transform: translateZ(-5000px);
-      }
-      100% {
-        transform: translateZ(0px);
-      }
-    }
-
-    @keyframes turn {
-      from {
-        transform: rotateY(0deg);
-      }
-      to {
-        transform: rotateY(-360deg);
-      }
-    }
-
     @keyframes remove {
       from {
         transform: rotateY(0deg);
@@ -42,26 +33,30 @@ export const Scene = styled.div<{
       }
     }
 
-    width: ${carouselItemWidth + 20}px;
-    height: ${carouselItemHeight + 20}px;
-    position: relative;
-    perspective: 1200px;
-    margin: 250px auto;
-
-    & .carousel__wrapper {
-      transform-style: preserve-3d;
-      transition: transform 1s;
-      animation: ${isRemoving ? 'remove 3s both' : 'turn 5s infinite linear 1s'};
-    }
-
-    & .carousel {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      transform-style: preserve-3d;
-      animation: carouselRender 1s;
-    }
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    animation: ${isRemoving ? 'remove 3s both' : 'turn 5s infinite linear 1s'};
   `}
+`;
+
+export const Carousel = styled.div`
+  @keyframes carouselRender {
+    0% {
+      transform: translateZ(-1000px);
+    }
+    50% {
+      transform: translateZ(-5000px);
+    }
+    100% {
+      transform: translateZ(0px);
+    }
+  }
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: carouselRender 1s;
 `;
 
 export const PickButton = styled.button`
