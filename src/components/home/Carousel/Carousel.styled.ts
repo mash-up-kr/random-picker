@@ -9,9 +9,9 @@ export const Scene = styled.div<{
   randomIndex: number;
   carouselLength: number;
   isRemoving: boolean;
-  rotateYDeg: number;
+  removeItemRotateY: number;
 }>`
-  ${({ isRemoving, rotateYDeg }) => css`
+  ${({ isRemoving, removeItemRotateY }) => css`
     @keyframes carouselRender {
       0% {
         transform: translateZ(-1000px);
@@ -38,7 +38,7 @@ export const Scene = styled.div<{
         transform: rotateY(0deg);
       }
       to {
-        transform: ${`rotateY(-${rotateYDeg}deg)`};
+        transform: ${`rotateY(-${removeItemRotateY}deg)`};
       }
     }
 

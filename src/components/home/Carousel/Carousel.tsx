@@ -3,7 +3,6 @@ import { CarouselItemType } from '../CarouselItem/CarouselItem';
 import { CarouselItem } from '@/components';
 import { carouselItemWidth } from '@/components/home/CarouselItem/CarouselItem.styled';
 import * as Styled from './Carousel.styled';
-import { Box } from '@chakra-ui/react';
 
 interface CarouselProps {
   carouselList: CarouselItemType[];
@@ -38,12 +37,12 @@ function Carousel({ carouselList, setRemovedList }: CarouselProps) {
     setRemovedList((pre) => [...pre, removeItem]);
   };
 
-  const removeItemRotateYDeg = (360 / carousel.length) * randomIndex * (carousel.length * 3 + 1);
+  const removeItemRotateY = (360 / carousel.length) * randomIndex * (carousel.length * 3 + 1);
   return (
     <Styled.Scene
       randomIndex={randomIndex}
       carouselLength={carousel.length}
-      rotateYDeg={removeItemRotateYDeg || 360 * 10}
+      removeItemRotateY={removeItemRotateY || 360 * 10}
       isRemoving={isRemoving}
     >
       <div className="carousel__wrapper">
