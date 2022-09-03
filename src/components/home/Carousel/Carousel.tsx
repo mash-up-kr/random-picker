@@ -59,9 +59,11 @@ function Carousel({ carouselList, setRemovedList }: CarouselProps) {
           })}
         </Styled.Carousel>
       </Styled.CarouselWrapper>
-      <Styled.PickButton onClick={handleRandomRemoveCarousel} disabled={isRemoving}>
-        뽑기
-      </Styled.PickButton>
+      {carousel.length !== 0 && (
+        <Styled.PickButton onClick={handleRandomRemoveCarousel} disabled={isRemoving}>
+          뽑기
+        </Styled.PickButton>
+      )}
     </Styled.Scene>
   );
 }
